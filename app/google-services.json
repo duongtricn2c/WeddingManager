@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "967792758347",
+    "firebase_url": "https://wedingmanager.firebaseio.com",
+    "project_id": "wedingmanager",
+    "storage_bucket": "wedingmanager.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:967792758347:android:858acf41658ea16b6447ce",
+        "android_client_info": {
+          "package_name": "com.dvtri.weddingmanager"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "967792758347-o9j6pu5nbr6ffa3ql4u3jgbgm9nh8tr8.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.dvtri.weddingmanager",
+            "certificate_hash": "d1edcab28c1796bc360985b4d4e5aa507a5447ed"
+          }
+        },
+        {
+          "client_id": "967792758347-nk1p8d0sj1qm5sdoib64r4kcln0nakqo.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB4AIgpPqf5WVR6bQxtT1RELEH6NAphcqQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "967792758347-nk1p8d0sj1qm5sdoib64r4kcln0nakqo.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
