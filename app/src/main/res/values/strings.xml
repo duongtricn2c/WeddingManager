@@ -3,4 +3,11 @@
     <string name="menu_diary_wedding">Diary wedding</string>
     <string name="menu_saving_book">Saving Book</string>
     <string name="menu_statistical">Statistical</string>
+    <string name="custom">Tùy chọn</string>
+    <string name="total_income">Tổng thu nhập :</string>
+    <string name="total_costs">Tổng chi :</string>
+    <string name="cir_current_month">CIR tháng này (%) :</string>
+    <string name="cir_last_month">CIR tháng trước (%) :</string>
+    <string name="shopping">Mua sắm</string>
+    <string name="spend_the_most">Khoản chi chủ yếu :</string>
 </resources>

@@ -4,4 +4,8 @@
     <color name="colorPrimaryDark">#00574B</color>
     <color name="colorAccent">#D81B60</color>
     <color name="colorPurple">#A51BF5</color>
+    <color name="colorMoneyNomal">#35A53A</color>
+    <color name="colorMoneyLow">#971c1b</color>
+    <color name="colorBlack">#000</color>
+    <color name="colorBlue">#1B68DD</color>
 </resources>
