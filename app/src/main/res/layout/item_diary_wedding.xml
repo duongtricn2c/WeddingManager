@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:id="@+id/itemParty"
+    android:orientation="horizontal">
+
+    <ImageView
+        android:padding="@dimen/dp_10"
+        android:src="@drawable/confetti"
+        android:id="@+id/imgPartyType"
+        android:layout_width="@dimen/dp_100"
+        android:layout_height="@dimen/dp_100" />
+
+    <TextView
+        android:id="@+id/tvPartyName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/dp_5"
+        android:layout_toStartOf="@id/imgExpandMore"
+        android:layout_toLeftOf="@id/imgExpandMore"
+        android:layout_toEndOf="@+id/imgPartyType"
+        android:layout_toRightOf="@+id/imgPartyType"
+        android:textColor="@color/colorPurple"
+        android:textSize="@dimen/sp_20"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/ViewPartyStatus"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/tvPartyName"
+        android:layout_margin="@dimen/dp_5"
+        android:layout_toEndOf="@+id/imgPartyType"
+        android:layout_toRightOf="@+id/imgPartyType"
+        android:text="@string/status"
+        android:textSize="@dimen/sp_14" />
+
+    <TextView
+        android:id="@+id/tvPartyStatus"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/tvPartyName"
+        android:layout_margin="@dimen/dp_5"
+        android:layout_toStartOf="@id/imgExpandMore"
+        android:layout_toLeftOf="@id/imgExpandMore"
+        android:layout_toEndOf="@+id/ViewPartyStatus"
+        android:layout_toRightOf="@+id/ViewPartyStatus"
+        android:textSize="@dimen/sp_14" />
+
+    <TextView
+        android:id="@+id/ViewPartyDate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/tvPartyStatus"
+        android:layout_margin="@dimen/dp_5"
+        android:layout_toEndOf="@id/imgPartyType"
+        android:layout_toRightOf="@id/imgPartyType"
+        android:text="@string/party_date_start"
+        android:textSize="@dimen/sp_14" />
+
+    <TextView
+        android:id="@+id/tvPartyDate"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/tvPartyStatus"
+        android:layout_margin="@dimen/dp_5"
+        android:layout_toStartOf="@id/imgExpandMore"
+        android:layout_toLeftOf="@id/imgExpandMore"
+        android:layout_toEndOf="@id/ViewPartyDate"
+        android:layout_toRightOf="@id/ViewPartyDate"
+        android:textSize="@dimen/sp_14" />
+
+    <ImageView
+        android:id="@+id/imgExpandMore"
+        android:layout_width="@dimen/dp_40"
+        android:layout_height="@dimen/dp_100"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:src="@drawable/ic_expand_more" />
+
+</RelativeLayout>

@@ -8,11 +8,11 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="@dimen/dimen_15dp"
+        android:layout_margin="@dimen/dp_15"
         android:gravity="center"
         android:text="@string/menu_saving_book"
         android:textColor="@color/colorPurple"
-        android:textSize="@dimen/dimen_30sp"
+        android:textSize="@dimen/sp_30"
         android:textStyle="bold" />
 
     <LinearLayout
@@ -27,40 +27,40 @@
             android:orientation="vertical">
 
             <TextView
-                android:padding="@dimen/dimen_5dp"
-                android:textSize="@dimen/dimen_18sp"
+                android:padding="@dimen/dp_5"
+                android:textSize="@dimen/sp_18"
                 android:textColor="@color/colorBlack"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:gravity="right"
                 android:text="@string/total_income" />
             <TextView
-                android:padding="@dimen/dimen_5dp"
-                android:textSize="@dimen/dimen_18sp"
+                android:padding="@dimen/dp_5"
+                android:textSize="@dimen/sp_18"
                 android:textColor="@color/colorBlack"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:gravity="right"
                 android:text="@string/total_costs" />
             <TextView
-                android:padding="@dimen/dimen_5dp"
-                android:textSize="@dimen/dimen_18sp"
+                android:padding="@dimen/dp_5"
+                android:textSize="@dimen/sp_18"
                 android:textColor="@color/colorBlack"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:gravity="right"
                 android:text="@string/cir_current_month" />
             <TextView
-                android:padding="@dimen/dimen_5dp"
-                android:textSize="@dimen/dimen_18sp"
+                android:padding="@dimen/dp_5"
+                android:textSize="@dimen/sp_18"
                 android:textColor="@color/colorBlack"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:gravity="right"
                 android:text="@string/cir_last_month" />
             <TextView
-                android:padding="@dimen/dimen_5dp"
-                android:textSize="@dimen/dimen_18sp"
+                android:padding="@dimen/dp_5"
+                android:textSize="@dimen/sp_18"
                 android:textColor="@color/colorBlack"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -76,45 +76,45 @@
             android:orientation="vertical">
 
             <TextView
-                android:padding="@dimen/dimen_5dp"
+                android:padding="@dimen/dp_5"
                 android:textStyle="bold"
-                android:textSize="@dimen/dimen_18sp"
+                android:textSize="@dimen/sp_18"
                 android:textColor="@color/colorMoneyNomal"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:gravity="left"
                 android:text="5.000.000 vnđ" />
             <TextView
-                android:padding="@dimen/dimen_5dp"
+                android:padding="@dimen/dp_5"
                 android:textStyle="bold"
-                android:textSize="@dimen/dimen_18sp"
+                android:textSize="@dimen/sp_18"
                 android:textColor="@color/colorMoneyLow"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:gravity="left"
                 android:text="4.000.000 vnđ" />
             <TextView
-                android:padding="@dimen/dimen_5dp"
+                android:padding="@dimen/dp_5"
                 android:textStyle="bold"
-                android:textSize="@dimen/dimen_18sp"
+                android:textSize="@dimen/sp_18"
                 android:textColor="@color/colorBlue"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:gravity="left"
                 android:text="0 %" />
             <TextView
-                android:padding="@dimen/dimen_5dp"
+                android:padding="@dimen/dp_5"
                 android:textStyle="bold"
-                android:textSize="@dimen/dimen_18sp"
+                android:textSize="@dimen/sp_18"
                 android:textColor="@color/colorBlue"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:gravity="left"
                 android:text="0 %" />
             <TextView
-                android:padding="@dimen/dimen_5dp"
+                android:padding="@dimen/dp_5"
                 android:textStyle="bold"
-                android:textSize="@dimen/dimen_18sp"
+                android:textSize="@dimen/sp_18"
                 android:textColor="@color/colorPurple"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"

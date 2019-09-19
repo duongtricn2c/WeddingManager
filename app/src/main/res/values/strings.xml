@@ -10,4 +10,6 @@
     <string name="cir_last_month">CIR tháng trước (%) :</string>
     <string name="shopping">Mua sắm</string>
     <string name="spend_the_most">Khoản chi chủ yếu :</string>
+    <string name="status">Trạng thái :</string>
+    <string name="party_date_start">Ngày diễn ra :</string>
 </resources>
