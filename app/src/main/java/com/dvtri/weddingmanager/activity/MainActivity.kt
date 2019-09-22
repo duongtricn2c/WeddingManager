@@ -24,6 +24,7 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
         btnDiaryWedding.setOnClickListener(this)
         btnSavingBook.setOnClickListener(this)
         btnStatistical.setOnClickListener(this)
+        replaceFragment(this,FragmentDiaryWedding(),"FragmentDiaryWedding","FragmentDiaryWedding")
     }
 
     override fun onClick(v: View?) {

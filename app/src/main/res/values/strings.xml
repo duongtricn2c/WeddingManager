@@ -12,4 +12,6 @@
     <string name="spend_the_most">Khoản chi chủ yếu :</string>
     <string name="status">Trạng thái :</string>
     <string name="party_date_start">Ngày diễn ra :</string>
+    <string name="account">Tài khoản</string>
+    <string name="password">Mật khẩu</string>
 </resources>
