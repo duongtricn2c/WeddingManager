@@ -14,4 +14,10 @@
     <string name="party_date_start">Ngày diễn ra :</string>
     <string name="account">Tài khoản</string>
     <string name="password">Mật khẩu</string>
+
+
+    <string name="facebook_app_id">2617619828301876</string> <string name="fb_login_protocol_scheme">fb2617619828301876</string>
+    <string name="registration_party">Registration Party</string>
+    <string name="logout">Đăng xuất</string>
+    <string name="name_party">Tên sự kiện</string>
 </resources>

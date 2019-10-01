@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android" >
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/itemDiaryParty"
+            android:icon="@drawable/ic_diary"
+            android:title="@string/menu_diary_wedding"
+            android:onClick="DiaryParty"/>
+        <item
+            android:id="@+id/itemSavingBook"
+            android:icon="@drawable/ic_saving_book"
+            android:title="@string/menu_saving_book"
+            android:onClick="SavingBook"/>
+        <item
+            android:id="@+id/itemStatistical"
+            android:icon="@drawable/ic_statistical"
+            android:title="@string/menu_statistical"
+            android:onClick="Statistical"/>
+        <item
+            android:id="@+id/itemLogout"
+            android:icon="@drawable/ic_diary"
+            android:title="@string/logout"
+            android:onClick="Logout"/>
+    </group>
+</menu>
