@@ -8,4 +8,5 @@
     <color name="colorMoneyLow">#971c1b</color>
     <color name="colorBlack">#000</color>
     <color name="colorBlue">#1B68DD</color>
+    <color name="colorWhite">#FFF</color>
 </resources>

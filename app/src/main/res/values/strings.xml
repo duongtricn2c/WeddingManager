@@ -20,4 +20,9 @@
     <string name="registration_party">Registration Party</string>
     <string name="logout">Đăng xuất</string>
     <string name="name_party">Tên sự kiện</string>
+    <string name="type_party">Loai :</string>
+    <string name="cost">Chi phí :</string>
+    <string name="owner_party">Người mời tham dự :</string>
+    <string name="cost_type">Hình thức :</string>
+    <string name="note_party">Ghi chú :</string>
 </resources>
