@@ -35,7 +35,6 @@ class PartyAdapter(val arrListParty: ArrayList<PartyModel>) :
         animate.duration = 500
         animate.fillAfter = true
 
-
         val item = arrListParty[position]
         holder.itemView.tvPartyName.text = item.partyName
         holder.itemView.tvPartyStatus.text = item.partyStatus
@@ -53,7 +52,6 @@ class PartyAdapter(val arrListParty: ArrayList<PartyModel>) :
                 holder.itemView.itemDetail.startAnimation(animate)
                 holder.itemView.itemDetail.visibility = View.GONE
                 holder.itemView.imgExpandMore.setImageResource(R.drawable.ic_expand_more)
-
             }
             isOpen = !isOpen
 
