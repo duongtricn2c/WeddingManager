@@ -4,121 +4,117 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical">
-    <ScrollView
+
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_alignParentTop="true"
-        tools:ignore="InefficientWeight,UselessParent">
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/dp_5"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/dp_10"
+            android:gravity="center"
+            android:text="@string/menu_diary_wedding"
+            android:textColor="@color/colorPurple"
+            android:textSize="@dimen/sp_30"
+            android:textStyle="bold" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/dp_5"
+            android:text="@string/custom"
+            android:textSize="@dimen/sp_18" />
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_margin="@dimen/dp_5"
-            android:orientation="vertical">
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_margin="@dimen/dp_10"
-                android:gravity="center"
-                android:text="@string/menu_diary_wedding"
-                android:textColor="@color/colorPurple"
-                android:textSize="@dimen/sp_30"
-                android:textStyle="bold" />
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="@string/custom"
-                android:layout_marginBottom="@dimen/dp_5"
-                android:textSize="@dimen/sp_18" />
+            android:orientation="horizontal"
+            android:baselineAligned="false">
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal">
-                <LinearLayout
-                    android:orientation="vertical"
-                    android:layout_weight="7"
+                android:layout_weight="7"
+                android:orientation="vertical">
+
+                <TextView
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content">
+                    android:layout_height="wrap_content"
+                    android:text="Loại :"/>
 
-                    <TextView
-                        android:text="Loại :"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content">
-                    </TextView>
-
-                    <Spinner
-                        android:layout_marginRight="-20dp"
-                        android:id="@+id/spinType"
-                        android:layout_width="match_parent"
-                        android:layout_height="40dp"
-                        android:tooltipText="Năm"
-                        tools:ignore="UnusedAttribute" />
-
-                </LinearLayout>
-                <LinearLayout
-                    android:orientation="vertical"
-                    android:layout_weight="6"
+                <Spinner
+                    android:id="@+id/spinType"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content">
+                    android:layout_height="40dp"
+                    android:layout_marginRight="-20dp"
+                    android:tooltipText="Năm"
+                    tools:ignore="UnusedAttribute"
+                    android:layout_marginEnd="-20dp" />
 
-                    <TextView
-                        android:text="Trạng thái :"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content">
-                    </TextView>
-
-                    <Spinner
-                        android:id="@+id/spinStatus"
-                        android:layout_width="match_parent"
-                        android:layout_height="40dp"
-                        android:layout_marginRight="-20dp"
-                        android:tooltipText="Năm"
-                        tools:ignore="UnusedAttribute" />
-
-                </LinearLayout>
-                <LinearLayout
-                    android:orientation="vertical"
-                    android:layout_weight="8"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content">
-
-                    <TextView
-                        android:text="Năm :"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content">
-                    </TextView>
-
-                    <Spinner
-                        android:id="@+id/spinYear"
-                        android:layout_width="match_parent"
-                        android:layout_height="40dp"
-                        android:layout_marginRight="-20dp"
-                        android:tooltipText="Năm"
-                        tools:ignore="UnusedAttribute" />
-
-                </LinearLayout>
             </LinearLayout>
 
-            <androidx.recyclerview.widget.RecyclerView
-                android:id="@+id/rcvListWedding"
+            <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="match_parent" />
+                android:layout_height="wrap_content"
+                android:layout_weight="6"
+                android:orientation="vertical">
 
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Trạng thái :"/>
+
+                <Spinner
+                    android:id="@+id/spinStatus"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:layout_marginRight="-20dp"
+                    android:tooltipText="Năm"
+                    tools:ignore="UnusedAttribute"
+                    android:layout_marginEnd="-20dp" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="8"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Năm :"/>
+
+                <Spinner
+                    android:id="@+id/spinYear"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:layout_marginRight="-20dp"
+                    android:tooltipText="Năm"
+                    tools:ignore="UnusedAttribute"
+                    android:layout_marginEnd="-20dp" />
+
+            </LinearLayout>
         </LinearLayout>
 
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rcvListWedding"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
 
-    </ScrollView>
+    </LinearLayout>
 
     <Button
         android:id="@+id/btnRegistration"
-        android:layout_alignParentBottom="true"
-        android:layout_alignParentEnd="true"
-        android:background="@drawable/ic_add_box"
         android:layout_width="@dimen/dp_80"
         android:layout_height="@dimen/dp_80"
-        android:layout_alignParentRight="true" />
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentBottom="true"
+        android:background="@drawable/ic_add_box" />
 
 </RelativeLayout>

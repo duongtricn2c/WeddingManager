@@ -16,7 +16,10 @@ import com.dvtri.weddingmanager.fragment.saving.FragmentSavingBook
 import com.dvtri.weddingmanager.utility.Util
 import kotlinx.android.synthetic.main.fragment_diary_wedding.*
 
-class FragmentDiaryParty() : Fragment(), View.OnClickListener {
+class FragmentDiaryParty() : Fragment(), View.OnClickListener, PartyAdapter.ItemClickListener {
+    override fun onItemClick(party: PartyModel) {
+
+    }
 
     private var arrListType: ArrayList<String> = ArrayList<String>()
     private var arrListStatus: ArrayList<String> = ArrayList<String>()
@@ -95,10 +98,9 @@ class FragmentDiaryParty() : Fragment(), View.OnClickListener {
 
         }
 
-        rcvListWedding.layoutManager =
-            LinearLayoutManager(this.context, LinearLayoutManager.VERTICAL, true)
+        rcvListWedding.layoutManager = LinearLayoutManager(this.context, LinearLayoutManager.VERTICAL, true)
         rcvListWedding.setHasFixedSize(true)
-        rcvListWedding.adapter = PartyAdapter(arrListParty!!)
+        rcvListWedding.adapter = PartyAdapter(arrListParty,this)
 
         btnRegistration.setOnClickListener {
             Util.replaceFragment(
@@ -134,6 +136,7 @@ class FragmentDiaryParty() : Fragment(), View.OnClickListener {
         arrListParty.run {
             arrListParty.add(
                 PartyModel(
+                    "01",
                     "Đám cưới em Trân",
                     "Đã tham dự",
                     "22/08/2019",
@@ -145,7 +148,7 @@ class FragmentDiaryParty() : Fragment(), View.OnClickListener {
                 )
             )
             arrListParty.add(
-                PartyModel(
+                PartyModel("01",
                     "Sinh nhật Hùng",
                     "Chưa tham dự",
                     "17/12/2019",
@@ -157,7 +160,7 @@ class FragmentDiaryParty() : Fragment(), View.OnClickListener {
                 )
             )
             arrListParty.add(
-                PartyModel(
+                PartyModel("01",
                     "Đám hỏi bạn Trang",
                     "Đã tham dự",
                     "29/08/2019",
@@ -169,7 +172,7 @@ class FragmentDiaryParty() : Fragment(), View.OnClickListener {
                 )
             )
             arrListParty.add(
-                PartyModel(
+                PartyModel("01",
                     "Liên hoan dự release dự án",
                     "Chưa tham dự",
                     "02/11/2019",
@@ -181,7 +184,7 @@ class FragmentDiaryParty() : Fragment(), View.OnClickListener {
                 )
             )
             arrListParty.add(
-                PartyModel(
+                PartyModel("01",
                     "Đám cưới chị Huyền",
                     "Đã tham dự",
                     "21/08/2019",
@@ -193,7 +196,7 @@ class FragmentDiaryParty() : Fragment(), View.OnClickListener {
                 )
             )
             arrListParty.add(
-                PartyModel(
+                PartyModel("01",
                     "Đám cưới em Trân",
                     "Đã tham dự",
                     "22/08/2019",
@@ -205,7 +208,7 @@ class FragmentDiaryParty() : Fragment(), View.OnClickListener {
                 )
             )
             arrListParty.add(
-                PartyModel(
+                PartyModel("01",
                     "Sinh nhật Hùng",
                     "Chưa tham dự",
                     "17/12/2019",
@@ -217,7 +220,7 @@ class FragmentDiaryParty() : Fragment(), View.OnClickListener {
                 )
             )
             arrListParty.add(
-                PartyModel(
+                PartyModel("01",
                     "Đám hỏi bạn Trang",
                     "Đã tham dự",
                     "29/08/2019",
@@ -229,7 +232,7 @@ class FragmentDiaryParty() : Fragment(), View.OnClickListener {
                 )
             )
             arrListParty.add(
-                PartyModel(
+                PartyModel("01",
                     "Liên hoan dự release dự án",
                     "Chưa tham dự",
                     "02/11/2019",
@@ -241,7 +244,7 @@ class FragmentDiaryParty() : Fragment(), View.OnClickListener {
                 )
             )
             arrListParty.add(
-                PartyModel(
+                PartyModel("01",
                     "Đám cưới chị Huyền",
                     "Đã tham dự",
                     "21/08/2019",

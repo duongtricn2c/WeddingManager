@@ -98,7 +98,7 @@
             android:layout_below="@+id/layoutInput"
             android:layout_centerHorizontal="true"
             android:layout_marginTop="@dimen/dp_30"
-            android:src="@drawable/login_fb" />
+            android:src="@drawable/login_ac" />
 
         <ImageView
             android:visibility="gone"
@@ -108,7 +108,7 @@
             android:layout_below="@+id/imgLoginFB"
             android:layout_centerHorizontal="true"
             android:layout_marginTop="@dimen/dp_10"
-            android:src="@drawable/login_gg" />
+            android:src="@drawable/login_fb" />
 
     </RelativeLayout>
 
