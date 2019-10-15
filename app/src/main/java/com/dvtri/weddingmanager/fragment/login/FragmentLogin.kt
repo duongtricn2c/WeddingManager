@@ -60,7 +60,7 @@ class FragmentLogin : Fragment(), View.OnClickListener {
     private fun initUI() {
         imgLoginFB.setOnClickListener(this)
 
-        val timer = object  :CountDownTimer(100,100){
+        val timer = object  :CountDownTimer(200,100){
             override fun onTick(p0: Long) {
             }
 

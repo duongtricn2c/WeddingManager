@@ -141,7 +141,7 @@ class FragmentDiaryParty() : Fragment(), View.OnClickListener, PartyAdapter.Item
                     "Đã tham dự",
                     "22/08/2019",
                     "Bạn Quyên",
-                    500000,
+                    "500000đ",
                     "Đám cưới",
                     "Chuyển khoản vắng mặt",
                     R.drawable.wedding_couple
@@ -153,7 +153,7 @@ class FragmentDiaryParty() : Fragment(), View.OnClickListener, PartyAdapter.Item
                     "Chưa tham dự",
                     "17/12/2019",
                     "Bạn Hùng",
-                    200000,
+                    "500000đ",
                     "Đám cưới",
                     "Chuyển khoản vắng mặt",
                     R.drawable.birthday_cake
@@ -165,7 +165,7 @@ class FragmentDiaryParty() : Fragment(), View.OnClickListener, PartyAdapter.Item
                     "Đã tham dự",
                     "29/08/2019",
                     "Bạn Trang",
-                    500000,
+                    "500000đ",
                     "Đám cưới",
                     "Chuyển khoản vắng mặt",
                     R.drawable.proposal
@@ -177,7 +177,7 @@ class FragmentDiaryParty() : Fragment(), View.OnClickListener, PartyAdapter.Item
                     "Chưa tham dự",
                     "02/11/2019",
                     "Sếp Trần",
-                    100000,
+                    "500000đ",
                     "Đám cưới",
                     "Chuyển khoản vắng mặt",
                     R.drawable.confetti
@@ -189,7 +189,7 @@ class FragmentDiaryParty() : Fragment(), View.OnClickListener, PartyAdapter.Item
                     "Đã tham dự",
                     "21/08/2019",
                     "Chị Huyền",
-                    500000,
+                    "500000đ",
                     "Đám cưới",
                     "Chuyển khoản vắng mặt",
                     R.drawable.wedding_couple
@@ -201,7 +201,7 @@ class FragmentDiaryParty() : Fragment(), View.OnClickListener, PartyAdapter.Item
                     "Đã tham dự",
                     "22/08/2019",
                     "Bạn Quyên",
-                    500000,
+                    "500000đ",
                     "Đám cưới",
                     "Chuyển khoản vắng mặt",
                     R.drawable.wedding_couple
@@ -213,7 +213,7 @@ class FragmentDiaryParty() : Fragment(), View.OnClickListener, PartyAdapter.Item
                     "Chưa tham dự",
                     "17/12/2019",
                     "Bạn Hùng",
-                    200000,
+                    "500000đ",
                     "Đám cưới",
                     "Chuyển khoản vắng mặt",
                     R.drawable.birthday_cake
@@ -225,7 +225,7 @@ class FragmentDiaryParty() : Fragment(), View.OnClickListener, PartyAdapter.Item
                     "Đã tham dự",
                     "29/08/2019",
                     "Bạn Trang",
-                    500000,
+                    "500000đ",
                     "Đám cưới",
                     "Chuyển khoản vắng mặt",
                     R.drawable.proposal
@@ -237,7 +237,7 @@ class FragmentDiaryParty() : Fragment(), View.OnClickListener, PartyAdapter.Item
                     "Chưa tham dự",
                     "02/11/2019",
                     "Sếp Trần",
-                    100000,
+                    "500000đ",
                     "Đám cưới",
                     "Chuyển khoản vắng mặt",
                     R.drawable.confetti
@@ -249,7 +249,7 @@ class FragmentDiaryParty() : Fragment(), View.OnClickListener, PartyAdapter.Item
                     "Đã tham dự",
                     "21/08/2019",
                     "Chị Huyền",
-                    500000,
+                    "500000đ",
                     "Đám cưới",
                     "Chuyển khoản vắng mặt",
                     R.drawable.wedding_couple

@@ -3,6 +3,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:layout_marginLeft="@dimen/dp_5"
+    android:layout_marginRight="@dimen/dp_5"
     android:orientation="vertical">
 
     <ScrollView
@@ -34,14 +36,16 @@
                 android:textSize="@dimen/sp_18" />
 
             <EditText
+                android:paddingLeft="@dimen/dp_10"
                 android:id="@+id/edtPartyName"
                 android:layout_width="match_parent"
-                android:layout_height="@dimen/dp_100"
+                android:layout_height="@dimen/dp_50"
+                android:layout_marginBottom="@dimen/dp_15"
                 android:background="@drawable/bg_edt"
-                android:inputType="text"
                 android:importantForAutofill="no"
-                tools:ignore="LabelFor"
-                android:layout_marginBottom="@dimen/dp_15"/>
+                android:inputType="text"
+                tools:ignore="LabelFor,RtlSymmetry"
+                android:paddingStart="@dimen/dp_10" />
 
             <TextView
                 android:layout_width="match_parent"
@@ -54,7 +58,8 @@
                 android:id="@+id/spnTypeParty"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="@dimen/dp_15"/>
+                android:layout_marginBottom="@dimen/dp_15"
+                android:gravity="center" />
 
             <TextView
                 android:layout_width="match_parent"
@@ -67,7 +72,8 @@
                 android:id="@+id/spnStatusParty"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="@dimen/dp_15"/>
+                android:layout_marginBottom="@dimen/dp_15"
+                android:gravity="center" />
 
             <TextView
                 android:layout_width="match_parent"
@@ -76,15 +82,39 @@
                 android:text="@string/party_date_start"
                 android:textSize="@dimen/sp_18" />
 
-            <TextView
-                android:textAlignment="center"
-                android:text="20/11/2019"
-                android:id="@+id/tvDateChoose"
-                android:textStyle="bold"
-                android:textSize="@dimen/sp_20"
-                android:layout_marginBottom="@dimen/dp_15"
+            <LinearLayout
+                android:orientation="horizontal"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"/>
+                android:layout_height="@dimen/dp_40"
+                tools:ignore="UselessLeaf">
+                <Spinner
+                    android:layout_marginRight="@dimen/dp_20"
+                    android:layout_weight="1"
+                    android:id="@+id/spnDay"
+                    android:paddingStart="@dimen/dp_10"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:layout_marginEnd="@dimen/dp_20"
+                    android:paddingLeft="@dimen/dp_10"
+                    tools:ignore="RtlSymmetry" />
+                <Spinner
+                    android:layout_marginRight="@dimen/dp_20"
+                    android:layout_weight="1"
+                    android:id="@+id/spnMonth"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:layout_marginEnd="@dimen/dp_20" />
+                <Spinner
+                    android:layout_weight="1"
+                    android:id="@+id/spnYear"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center" />
+
+
+            </LinearLayout>
 
             <TextView
                 android:layout_width="match_parent"
@@ -93,15 +123,18 @@
                 android:text="@string/cost"
                 android:textSize="@dimen/sp_18" />
 
-            <TextView
-                android:textAlignment="center"
-                android:text="400.000 đ"
-                android:id="@+id/tvCostParty"
-                android:textStyle="bold"
-                android:textSize="@dimen/sp_20"
-                android:layout_marginBottom="@dimen/dp_15"
+            <EditText
+                android:paddingLeft="@dimen/dp_10"
+                android:id="@+id/edtCostParty"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"/>
+                android:layout_height="@dimen/dp_50"
+                android:layout_marginBottom="@dimen/dp_15"
+                android:background="@drawable/bg_edt"
+                android:importantForAutofill="no"
+                android:inputType="text"
+                tools:ignore="LabelFor,RtlSymmetry"
+                android:paddingStart="@dimen/dp_10" />
+
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -110,10 +143,12 @@
                 android:textSize="@dimen/sp_18" />
 
             <Spinner
-                android:id="@+id/spnHinhThuc"
+                android:id="@+id/spnCostType"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="@dimen/dp_15"/>
+                android:layout_marginBottom="@dimen/dp_15"
+                android:gravity="center" />
+
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -122,14 +157,16 @@
                 android:textSize="@dimen/sp_18" />
 
             <EditText
+                android:paddingLeft="@dimen/dp_10"
                 android:id="@+id/edtOwnerParty"
                 android:layout_width="match_parent"
-                android:layout_height="@dimen/dp_100"
+                android:layout_height="@dimen/dp_50"
+                android:layout_marginBottom="@dimen/dp_15"
                 android:background="@drawable/bg_edt"
-                android:inputType="text"
                 android:importantForAutofill="no"
-                tools:ignore="LabelFor"
-                android:layout_marginBottom="@dimen/dp_15"/>
+                android:inputType="text"
+                tools:ignore="LabelFor,RtlSymmetry"
+                android:paddingStart="@dimen/dp_10" />
 
             <TextView
                 android:layout_width="match_parent"
@@ -139,47 +176,49 @@
                 android:textSize="@dimen/sp_18" />
 
             <EditText
+                android:paddingLeft="@dimen/dp_10"
                 android:id="@+id/edtNoteParty"
                 android:layout_width="match_parent"
                 android:layout_height="@dimen/dp_100"
+                android:layout_marginBottom="@dimen/dp_100"
                 android:background="@drawable/bg_edt"
-                android:inputType="text"
                 android:importantForAutofill="no"
-                tools:ignore="LabelFor"
-                android:layout_marginBottom="@dimen/dp_100"/>
+                android:inputType="text"
+                tools:ignore="LabelFor,RtlSymmetry"
+                android:paddingStart="@dimen/dp_10" />
 
         </LinearLayout>
 
     </ScrollView>
 
     <LinearLayout
-        android:layout_alignParentBottom="true"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
         android:orientation="horizontal">
 
         <Button
-            android:textStyle="bold"
-            android:textColor="@color/colorWhite"
-            android:background="@color/colorPurple"
-            android:text="ADD"
             android:id="@+id/btnAddParty"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_margin="@dimen/dp_10"
             android:layout_weight="1"
+            android:background="@color/colorMoneyNomal"
+            android:text="@string/add"
+            android:textColor="@color/colorWhite"
+            android:textStyle="bold"
             tools:ignore="ButtonStyle" />
 
         <Button
-            android:background="@color/colorMoneyLow"
-            android:textStyle="bold"
-            android:textColor="@color/colorWhite"
-            android:text="Cancel"
             android:id="@+id/btnCancel"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_margin="@dimen/dp_10"
             android:layout_weight="1"
+            android:background="@color/colorMoneyLow"
+            android:text="@string/cancel"
+            android:textColor="@color/colorWhite"
+            android:textStyle="bold"
             tools:ignore="ButtonStyle" />
 
     </LinearLayout>

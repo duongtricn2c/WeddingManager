@@ -25,4 +25,6 @@
     <string name="owner_party">Người mời tham dự :</string>
     <string name="cost_type">Hình thức :</string>
     <string name="note_party">Ghi chú :</string>
+    <string name="add">ADD</string>
+    <string name="cancel">Cancel</string>
 </resources>

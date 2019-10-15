@@ -1,6 +1,5 @@
 package com.dvtri.weddingmanager.fragment.dirary.registrationParty
 
-import android.app.Activity
 import android.os.Bundle
 import android.text.TextUtils
 import android.view.LayoutInflater
@@ -28,29 +27,30 @@ class FragmentRegistrationParty : Fragment(), View.OnClickListener {
     private var idParty:String? =null
     private var arrListType: ArrayList<String> = ArrayList<String>()
     private var arrListStatus: ArrayList<String> = ArrayList<String>()
+    private var arrCostType: ArrayList<String> = ArrayList<String>()
+    private var arrListDays: ArrayList<Int> = ArrayList<Int>()
+    private var arrListMonths: ArrayList<Int> = ArrayList<Int>()
+    private var arrListYears: ArrayList<Int> = ArrayList<Int>()
 
 
     override fun onClick(v: View?) {
-        when(v){
-            btnAddParty ->{
-                createParty("chuot01",
-                    "Đám cưới chuột",
-                    "Đã tham dự",
-                    "22/12/2019",
-                    "Con chuột",
-                    700000,
-                "Đám cưới",
-                    "gửi bì",
-                    1)
-//                createParty("tri01",
-//                    edtPartyName.text.toString(),
-//                    spnStatusParty.selectedItem.toString(),
-//                    "11/11/2019",
-//                    edtOwnerParty.text.toString(),
-//                    600000,
-//                    spnTypeParty.selectedItem.toString(),
-//                    edtNoteParty.text.toString(),
-//                    1)
+        when (v) {
+            btnAddParty -> {
+                createParty(
+                    "",
+                    edtPartyName.text.toString(),
+                    spnStatusParty.selectedItem.toString(),
+                    spnDay.selectedItem.toString() + "/" + spnMonth.selectedItem.toString() + "/" + spnYear.selectedItem.toString(),
+                    edtOwnerParty.text.toString(),
+                    edtCostParty.text.toString(),
+                    spnTypeParty.selectedItem.toString(),
+                    edtNoteParty.text.toString(),
+                    1
+                )
+                activity!!.supportFragmentManager.popBackStack("FragmentDiaryParty", 0)
+            }
+            btnCancel ->{
+                activity!!.supportFragmentManager.popBackStack("FragmentDiaryParty", 0)
             }
         }
     }
@@ -68,7 +68,6 @@ class FragmentRegistrationParty : Fragment(), View.OnClickListener {
         initConnect()
         initData()
         initUI()
-
     }
 
     private fun initData() {
@@ -84,6 +83,32 @@ class FragmentRegistrationParty : Fragment(), View.OnClickListener {
             add("Chưa tham dự")
             add("Đã tham dự")
         }
+        arrCostType.run {
+            clear()
+            add("Tiền mặt")
+            add("Gửi hộ (Vắng mặt)")
+            add("Chuyển khoản")
+            add("Quà tặng")
+        }
+        arrListDays.run {
+            clear()
+            for (i in 1..31){
+                add(i)
+            }
+
+        }
+        arrListMonths.run {
+            clear()
+            for (i in 1..12){
+                add(i)
+            }
+        }
+        arrListYears.run {
+            clear()
+            for (i in 2000..2099){
+                add(i)
+            }
+        }
     }
 
     private fun initConnect() {
@@ -95,37 +120,35 @@ class FragmentRegistrationParty : Fragment(), View.OnClickListener {
 
     private fun initUI() {
         btnAddParty.setOnClickListener(this)
-        btnCancel.setOnClickListener {
-            activity!!.supportFragmentManager.popBackStack("FragmentDiaryParty", 0)
-        }
-        val adapterType = ArrayAdapter<String>(
-            this.context as Context,
-            android.R.layout.simple_spinner_item,
-            arrListType
-        )
-        val adapterStatus = ArrayAdapter<String>(
-            this.context as Context,
-            android.R.layout.simple_spinner_item,
-            arrListStatus
-        )
+        btnCancel.setOnClickListener (this)
+        val adapterType = ArrayAdapter<String>(this.context as Context,android.R.layout.simple_spinner_item,arrListType)
+        val adapterStatus = ArrayAdapter<String>(this.context as Context,android.R.layout.simple_spinner_item,arrListStatus)
+        val adapterCostType = ArrayAdapter<String>(this.context as Context,android.R.layout.simple_spinner_item,arrCostType)
+        val adapterDays = ArrayAdapter<Int>(this.context as Context,android.R.layout.simple_spinner_item,arrListDays)
+        val adapterMonths = ArrayAdapter<Int>(this.context as Context,android.R.layout.simple_spinner_item,arrListMonths)
+        val adapterCostYears = ArrayAdapter<Int>(this.context as Context,android.R.layout.simple_spinner_item,arrListYears)
 
         adapterType.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
         adapterStatus.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
+        adapterCostType.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
+        adapterDays.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
+        adapterMonths.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
+        adapterCostYears.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
 
         spnTypeParty.adapter = adapterType
         spnStatusParty.adapter = adapterStatus
-
-
-
+        spnCostType.adapter = adapterCostType
+        spnDay.adapter = adapterDays
+        spnMonth.adapter = adapterMonths
+        spnYear.adapter = adapterCostYears
     }
 
-    private fun createParty(
-        idUser:String,
+    private fun createParty(idUser:String,
         partyName: String,
         partyStatus: String,
         partyDate: String,
         partyOwner: String,
-        partyCost: Long,
+        partyCost: String,
         partyType: String,
         partyDetail: String,
         partyImage: Int
@@ -133,28 +156,21 @@ class FragmentRegistrationParty : Fragment(), View.OnClickListener {
         if (TextUtils.isEmpty(idParty)) {
             idParty = mFirebaseDatabase!!.push().getKey()
         }
-
-        var party = PartyModel(idUser,partyName,
+        val party = PartyModel(idUser,partyName,
             partyStatus,partyDate,
             partyOwner,partyCost,
             partyType,partyDetail,partyImage)
-
         mFirebaseDatabase!!.child(idParty!!).setValue(party)
-
-
 
         mFirebaseDatabase!!.child(idParty!!).addValueEventListener(object : ValueEventListener {
             override fun onDataChange(dataSnapshot: DataSnapshot) {
                 val party = dataSnapshot.getValue(PartyModel::class.java)
-
                 // Check for null
                 if (party == null) {
                     Log.e(TAG, "Party data is null!")
                     return
                 }
-
                 Log.e(TAG, "User data is changed!" + party.partyName + ", " + party.partyCost)
-
             }
 
             override fun onCancelled(error: DatabaseError) {
