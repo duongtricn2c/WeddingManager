@@ -1,20 +1,27 @@
 package com.dvtri.weddingmanager.fragment.dirary
 
+import android.content.ContentValues.TAG
 import android.content.Context
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.AdapterView
 import android.widget.ArrayAdapter
+import androidx.annotation.NonNull
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.dvtri.weddingmanager.R
 import com.dvtri.weddingmanager.activity.MainActivity
 import com.dvtri.weddingmanager.fragment.dirary.registrationParty.FragmentRegistrationParty
-import com.dvtri.weddingmanager.fragment.saving.FragmentSavingBook
 import com.dvtri.weddingmanager.utility.Util
+import com.dvtri.weddingmanager.utility.arrListParty
+import com.dvtri.weddingmanager.utility.parties
+import com.google.firebase.database.*
+import com.google.firebase.database.annotations.Nullable
 import kotlinx.android.synthetic.main.fragment_diary_wedding.*
+
 
 class FragmentDiaryParty() : Fragment(), View.OnClickListener, PartyAdapter.ItemClickListener {
     override fun onItemClick(party: PartyModel) {
@@ -24,7 +31,10 @@ class FragmentDiaryParty() : Fragment(), View.OnClickListener, PartyAdapter.Item
     private var arrListType: ArrayList<String> = ArrayList<String>()
     private var arrListStatus: ArrayList<String> = ArrayList<String>()
     private var arrListYear: ArrayList<String> = ArrayList<String>()
-    private var arrListParty: ArrayList<PartyModel> = ArrayList<PartyModel>()
+    var database = FirebaseDatabase.getInstance()
+    var myRef = database.getReference(parties)
+    private var partyAdapter:PartyAdapter?=null
+
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -100,7 +110,10 @@ class FragmentDiaryParty() : Fragment(), View.OnClickListener, PartyAdapter.Item
 
         rcvListWedding.layoutManager = LinearLayoutManager(this.context, LinearLayoutManager.VERTICAL, true)
         rcvListWedding.setHasFixedSize(true)
-        rcvListWedding.adapter = PartyAdapter(arrListParty,this)
+        partyAdapter = PartyAdapter(arrListParty,this)
+        rcvListWedding.adapter = partyAdapter
+
+
 
         btnRegistration.setOnClickListener {
             Util.replaceFragment(
@@ -133,133 +146,68 @@ class FragmentDiaryParty() : Fragment(), View.OnClickListener, PartyAdapter.Item
             }
         }
 
-        arrListParty.run {
-            arrListParty.add(
-                PartyModel(
-                    "01",
-                    "Đám cưới em Trân",
-                    "Đã tham dự",
-                    "22/08/2019",
-                    "Bạn Quyên",
-                    "500000đ",
-                    "Đám cưới",
-                    "Chuyển khoản vắng mặt",
-                    R.drawable.wedding_couple
-                )
-            )
-            arrListParty.add(
-                PartyModel("01",
-                    "Sinh nhật Hùng",
-                    "Chưa tham dự",
-                    "17/12/2019",
-                    "Bạn Hùng",
-                    "500000đ",
-                    "Đám cưới",
-                    "Chuyển khoản vắng mặt",
-                    R.drawable.birthday_cake
-                )
-            )
-            arrListParty.add(
-                PartyModel("01",
-                    "Đám hỏi bạn Trang",
-                    "Đã tham dự",
-                    "29/08/2019",
-                    "Bạn Trang",
-                    "500000đ",
-                    "Đám cưới",
-                    "Chuyển khoản vắng mặt",
-                    R.drawable.proposal
-                )
-            )
-            arrListParty.add(
-                PartyModel("01",
-                    "Liên hoan dự release dự án",
-                    "Chưa tham dự",
-                    "02/11/2019",
-                    "Sếp Trần",
-                    "500000đ",
-                    "Đám cưới",
-                    "Chuyển khoản vắng mặt",
-                    R.drawable.confetti
-                )
-            )
-            arrListParty.add(
-                PartyModel("01",
-                    "Đám cưới chị Huyền",
-                    "Đã tham dự",
-                    "21/08/2019",
-                    "Chị Huyền",
-                    "500000đ",
-                    "Đám cưới",
-                    "Chuyển khoản vắng mặt",
-                    R.drawable.wedding_couple
-                )
-            )
-            arrListParty.add(
-                PartyModel("01",
-                    "Đám cưới em Trân",
-                    "Đã tham dự",
-                    "22/08/2019",
-                    "Bạn Quyên",
-                    "500000đ",
-                    "Đám cưới",
-                    "Chuyển khoản vắng mặt",
-                    R.drawable.wedding_couple
-                )
-            )
-            arrListParty.add(
-                PartyModel("01",
-                    "Sinh nhật Hùng",
-                    "Chưa tham dự",
-                    "17/12/2019",
-                    "Bạn Hùng",
-                    "500000đ",
-                    "Đám cưới",
-                    "Chuyển khoản vắng mặt",
-                    R.drawable.birthday_cake
-                )
-            )
-            arrListParty.add(
-                PartyModel("01",
-                    "Đám hỏi bạn Trang",
-                    "Đã tham dự",
-                    "29/08/2019",
-                    "Bạn Trang",
-                    "500000đ",
-                    "Đám cưới",
-                    "Chuyển khoản vắng mặt",
-                    R.drawable.proposal
-                )
-            )
-            arrListParty.add(
-                PartyModel("01",
-                    "Liên hoan dự release dự án",
-                    "Chưa tham dự",
-                    "02/11/2019",
-                    "Sếp Trần",
-                    "500000đ",
-                    "Đám cưới",
-                    "Chuyển khoản vắng mặt",
-                    R.drawable.confetti
-                )
-            )
-            arrListParty.add(
-                PartyModel("01",
-                    "Đám cưới chị Huyền",
-                    "Đã tham dự",
-                    "21/08/2019",
-                    "Chị Huyền",
-                    "500000đ",
-                    "Đám cưới",
-                    "Chuyển khoản vắng mặt",
-                    R.drawable.wedding_couple
-                )
-            )
-        }
-
+        loadParty()
     }
 
     override fun onClick(p0: View?) {
+
+    }
+
+    private fun loadParty() {
+        arrListParty = ArrayList<PartyModel>()
+        Log.d(TAG, "loadFirstPage: ")
+        //Lấy dữ liệu
+        //lấy đối tượng FirebaseDatabase
+        val database = FirebaseDatabase.getInstance()
+        //Kết nối tới node có tên là contacts (node này do ta định nghĩa trong CSDL Firebase)
+        val mDatabase = database.getReference(parties)
+        //truy xuất và lắng nghe sự thay đổi dữ liệu
+        mDatabase.addChildEventListener(object : ChildEventListener {
+            override fun onChildAdded(@NonNull dataSnapshot: DataSnapshot, @Nullable s: String?) {
+                val key = dataSnapshot.key
+                val getChild = mDatabase.child(key!!)
+                getChild.addValueEventListener(object : ValueEventListener {
+                    override fun onDataChange(@NonNull dataSnapshot: DataSnapshot) {
+                        val parties = dataSnapshot.getValue<PartyModel>(PartyModel::class.java)
+                        arrListParty.add(PartyModel(
+                            parties!!.idUser,
+                            parties.partyName,
+                            parties.partyStatus,
+                            parties.partyDate,
+                            parties.partyOwner,
+                            parties.partyCost,
+                            parties.partyType,
+                            parties.partyDetail,
+                            parties.partyImage
+                            )
+                        )
+                        partyAdapter!!.loadData()
+                    }
+                    override fun onCancelled(@NonNull databaseError: DatabaseError) {
+
+                    }
+                })
+
+
+            }
+
+
+            override fun onChildChanged(@NonNull dataSnapshot: DataSnapshot, @Nullable s: String?) {
+
+            }
+
+            override fun onChildRemoved(@NonNull dataSnapshot: DataSnapshot) {
+
+            }
+
+            override fun onChildMoved(@NonNull dataSnapshot: DataSnapshot, @Nullable s: String?) {
+
+            }
+
+            override fun onCancelled(@NonNull databaseError: DatabaseError) {
+
+            }
+        })
 
     }
 

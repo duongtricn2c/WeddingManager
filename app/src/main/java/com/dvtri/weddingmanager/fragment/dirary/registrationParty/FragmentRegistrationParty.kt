@@ -18,6 +18,7 @@ import android.content.ContentValues.TAG
 import android.content.Context
 import android.util.Log
 import android.widget.ArrayAdapter
+import com.dvtri.weddingmanager.utility.parties
 
 
 class FragmentRegistrationParty : Fragment(), View.OnClickListener {
@@ -114,7 +115,7 @@ class FragmentRegistrationParty : Fragment(), View.OnClickListener {
     private fun initConnect() {
         mFirebaseInstance = FirebaseDatabase.getInstance()
         // get reference to 'users' node
-        mFirebaseDatabase = mFirebaseInstance!!.getReference("parties")
+        mFirebaseDatabase = mFirebaseInstance!!.getReference(parties)
 
     }
 
@@ -161,22 +162,5 @@ class FragmentRegistrationParty : Fragment(), View.OnClickListener {
             partyOwner,partyCost,
             partyType,partyDetail,partyImage)
         mFirebaseDatabase!!.child(idParty!!).setValue(party)
-
-        mFirebaseDatabase!!.child(idParty!!).addValueEventListener(object : ValueEventListener {
-            override fun onDataChange(dataSnapshot: DataSnapshot) {
-                val party = dataSnapshot.getValue(PartyModel::class.java)
-                // Check for null
-                if (party == null) {
-                    Log.e(TAG, "Party data is null!")
-                    return
-                }
-                Log.e(TAG, "User data is changed!" + party.partyName + ", " + party.partyCost)
-            }
-
-            override fun onCancelled(error: DatabaseError) {
-                // Failed to read value
-                Log.e(TAG, "Failed to read party", error.toException())
-            }
-        })
     }
 }

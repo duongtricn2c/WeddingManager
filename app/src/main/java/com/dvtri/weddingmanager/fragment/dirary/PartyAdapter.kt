@@ -14,7 +14,7 @@ import android.widget.TextView
 import com.dvtri.weddingmanager.R
 
 
-class PartyAdapter(val arrListParty: ArrayList<PartyModel>,val mItemClickListener: ItemClickListener) :
+class PartyAdapter(var arrListParty: ArrayList<PartyModel>, val mItemClickListener: ItemClickListener) :
     RecyclerView.Adapter<PartyAdapter.MyViewHolder>() {
 
     interface ItemClickListener {
@@ -46,7 +46,7 @@ class PartyAdapter(val arrListParty: ArrayList<PartyModel>,val mItemClickListene
         holder.tvPartyName.text = item.partyName
         holder.tvPartyStatus.text = item.partyStatus
         holder.tvPartyDate.text = item.partyDate
-        holder.imgPartyType.setImageResource(item.partyImage)
+        holder.imgPartyType.setImageResource(R.drawable.wedding_couple)
         holder.tvOwner.text = item.partyOwner
         holder.tvCost.text = item.partyCost.toString()
         holder.tvType.text = item.partyType
@@ -85,6 +85,15 @@ class PartyAdapter(val arrListParty: ArrayList<PartyModel>,val mItemClickListene
         val imgExpandMore = view.findViewById(R.id.imgExpandMore) as ImageView
         val itemDetail = view.findViewById(R.id.itemDetail) as LinearLayout
 
+    }
+
+    fun loadData(){
+
+        notifyDataSetChanged()
+    }
+
+    fun delItem(){
+        notifyItemInserted(arrListParty.size - 1)
     }
 
 }
